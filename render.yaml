@@ -1,0 +1,16 @@
+services:
+  - type: web
+    name: influence-guard-ai
+    env: python
+    plan: free
+    
+    # Install dependencies
+    buildCommand: pip install -r requirements.txt
+    
+    # Start the Streamlit app with secrets setup
+    startCommand: python start.py
+    
+    # Environment variables - set values in Render dashboard
+    envVars:
+      - key: PYTHONUNBUFFERED
+        value: "true"
